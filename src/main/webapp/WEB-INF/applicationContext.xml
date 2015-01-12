@@ -12,7 +12,5 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 <!-- Import something configuration context -->
 <import resource="hibernateContext.xml" />
-<import resource="securityContext.xml" />
 <import resource="servletContext.xml" />
-<import resource="tileContext.xml" />
 </beans>
