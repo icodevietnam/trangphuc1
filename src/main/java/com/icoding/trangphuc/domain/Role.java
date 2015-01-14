@@ -25,7 +25,7 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = Role.PK)
-	private Integer id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -40,11 +40,11 @@ public class Role {
 	@JoinTable(name = "roles_permission", joinColumns = { @JoinColumn(name = "role_id") }, inverseJoinColumns = { @JoinColumn(name = "permission_id") })
 	private Collection<Permission> listPermisiions;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

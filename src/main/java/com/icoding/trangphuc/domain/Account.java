@@ -25,7 +25,7 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = Account.PK)
-	private Integer id;
+	private long id;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -64,7 +64,7 @@ public class Account {
 	private Boolean passwordExpired;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "accounts_roles", joinColumns = { @JoinColumn(name = "account_id")}, inverseJoinColumns = { @JoinColumn(name = "role_id") })
+	@JoinTable(name = "accounts_roles", joinColumns = { @JoinColumn(name = "account_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
 	private Collection<Role> listRoles;
 
 	public Collection<Role> getListRoles() {
@@ -169,6 +169,14 @@ public class Account {
 
 	public void setPasswordExpired(Boolean passwordExpired) {
 		this.passwordExpired = passwordExpired;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

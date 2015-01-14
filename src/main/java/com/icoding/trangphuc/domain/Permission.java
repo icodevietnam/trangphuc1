@@ -22,7 +22,7 @@ public class Permission {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = Permission.PK)
-	private Integer id;
+	private long id;
 
 	@Column(name = "name")
 	private String name;
@@ -33,11 +33,11 @@ public class Permission {
 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "listPermisiions")
 	private Collection<Role> listRoles;
 
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
