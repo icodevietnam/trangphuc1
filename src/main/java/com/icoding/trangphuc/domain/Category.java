@@ -20,7 +20,7 @@ public class Category {
 
 	private CategoryStatus categoryStatus;
 	private Category parent;
-	
+
 	@OneToOne(fetch = FetchType.LAZY)
 	@PrimaryKeyJoinColumn
 	private Article article;
