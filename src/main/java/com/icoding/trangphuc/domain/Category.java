@@ -5,6 +5,8 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import com.icoding.trangphuc.constant.CategoryStatus;
@@ -17,13 +19,25 @@ public class Category {
 	public static final long serialVersionUID = 0L;
 
 	private CategoryStatus categoryStatus;
-	private Category category;
+	private Category parent;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@PrimaryKeyJoinColumn
+	private Article article;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "stock")
 	Collection<News> listNews;
-	
+
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "stock")
 	Collection<Product> listProducts;
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
 
 	public CategoryStatus getCategoryStatus() {
 		return categoryStatus;
@@ -32,13 +46,13 @@ public class Category {
 	public void setCategoryStatus(CategoryStatus categoryStatus) {
 		this.categoryStatus = categoryStatus;
 	}
-	
-	public Category getCategory() {
-		return category;
+
+	public Category getParent() {
+		return parent;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setParent(Category parent) {
+		this.parent = parent;
 	}
 
 	public Collection<News> getListNews() {
