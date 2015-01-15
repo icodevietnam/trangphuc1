@@ -2,6 +2,7 @@ package com.icoding.trangphuc.domain;
 
 import java.util.Collection;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -16,15 +17,16 @@ import com.icoding.trangphuc.constant.CategoryStatus;
 @Table(name = Category.TABLE)
 public class Category {
 	public static final String TABLE = "category";
-	private static final String PK = "id";
 	public static final long serialVersionUID = 0L;
 
 	private CategoryStatus categoryStatus;
+	
 	private Category parent;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@PrimaryKeyJoinColumn
 	@Id
+	@Column(name="id")
 	private Article article;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "stock")

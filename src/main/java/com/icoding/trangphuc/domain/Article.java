@@ -59,7 +59,10 @@ public class Article {
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "article", cascade = CascadeType.ALL)
 	private Category category;
-	
+
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "article", cascade = CascadeType.ALL)
+	private AboutUs aboutUs;
+
 	public Category getCategory() {
 		return category;
 	}
