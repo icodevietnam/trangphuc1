@@ -66,8 +66,12 @@ public abstract class AbstractFacadeDaoImpl<T> extends HibernateDaoSupport
 		Boolean flag = false;
 		try {
 			T t = get(id);
-			getHibernateTemplate().delete(t);
-			flag = true;
+			if (t != null) {
+				getHibernateTemplate().delete(t);
+				flag = true;
+			} else {
+				flag = false;
+			}
 		} catch (Exception e) {
 			flag = false;
 		}
