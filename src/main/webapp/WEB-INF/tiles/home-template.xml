@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="roleManager" extends="template">
+		<put-attribute name="title" value="Role Manager" />
+		<put-attribute name="content" value="/View/jsp/Admin/RoleManager.jsp" />
+	</definition>
+	
+	<definition name="roletest" extends="template">
+		<put-attribute name="title" value="Role Manager" />
+		<put-attribute name="content" value="/View/jsp/Admin/Test.jsp" />
+	</definition>
+	
+	<definition name="addrole" extends="template">
+		<put-attribute name="title" value="Add Role" />
+		<put-attribute name="content" value="/View/jsp/Admin/addrole.jsp" />
+	</definition>
+	
+	<definition name="assignrole" extends="template">
+		<put-attribute name="title" value="Assign Role" />
+		<put-attribute name="content" value="/View/jsp/Admin/AssignRole.jsp" />
+	</definition>
+	
+
+</tiles-definitions>
