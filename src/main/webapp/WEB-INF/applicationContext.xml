@@ -8,9 +8,10 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd
 http://www.springframework.org/schema/mvc 
 http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-<context:component-scan base-package="com.icoding.trangphuc" />
+	<context:component-scan base-package="com.icoding.trangphuc" />
 
-<!-- Import something configuration context -->
-<import resource="hibernateContext.xml" />
-<import resource="servletContext.xml" />
+	<!-- Import something configuration context -->
+	<import resource="hibernateContext.xml" />
+	<import resource="servletContext.xml" />
+	<import resource="tileContext.xml"/>
 </beans>
