@@ -1,0 +1,69 @@
+body {
+	background: #EEE;
+	height: 100%;
+}
+
+.login-navbar {
+	border-radius: 0;
+}
+
+.login-navbar {
+	min-height: 40px !important;
+}
+
+.login-navbar .nav>li>a {
+	padding-top: 9px;
+	padding-bottom: 6px;
+	font-size: 15px;
+	color: white;
+}
+
+.login-navbar .nav>li>a:hover {
+	text-decoration: underline;
+}
+
+.login-navbar .nav>li>a>span {
+	color: white;
+}
+
+#wrapper {
+	margin-top: 10px;
+	padding: 5px;
+}
+
+.admin-footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: #101010;
+	color: white;
+	padding: 5px;
+}
+
+.loginPage .logo {
+	border-right: 1px solid grey;
+}
+
+.logo-company {
+	width: 100px;
+	margin: auto;
+}
+
+.right-10 {
+	margin-right: 10px;
+}
+
+.right-5 {
+	margin-right: 5px;
+}
+
+.error {
+	color: red;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.footer-text {
+	margin: auto;
+	text-align: center;
+}
