@@ -3,6 +3,7 @@ package com.icoding.trangphuc.dao;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Property;
@@ -145,6 +146,10 @@ public abstract class AbstractFacadeDaoImpl<T> extends HibernateDaoSupport
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	public Session getCurrentSession() {
+		return sessionFactory.getCurrentSession();
 	}
 
 }
