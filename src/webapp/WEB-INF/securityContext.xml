@@ -15,10 +15,15 @@ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 			authentication-failure-url="/login?error" username-parameter="username"
 			password-parameter="password" />
 		<logout logout-success-url="/login?logout" delete-cookies="JSESSIONID" />
-		<!-- <csrf /> -->
+		<csrf />
 	</http>
 
 	<authentication-manager>
-		<authentication-provider user-service-ref="loginService" />
+		<authentication-provider user-service-ref="loginService">
+			<password-encoder ref="md5PasswordEncoder" />
+		</authentication-provider>
 	</authentication-manager>
+
+	<beans:bean id="md5PasswordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
 </beans:beans>

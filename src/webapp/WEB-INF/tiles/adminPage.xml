@@ -4,8 +4,10 @@
 "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="adminTemp" template="/Views/layout/login/adminPage.jsp">
+	<definition name="adminTemp" template="/Views/layout/admin/adminPage.jsp">
 		<put-attribute name="title" value="Page" />
-		<put-attribute name="content" value="Nothing to display" />
+		<put-attribute name="navbar-header" value="Nothing to display" />
+		<put-attribute name="navbar-right" value="Nothing to display" />
+		<put-attribute name="navbar-default" value="Nothing to display" />
 	</definition>
 </tiles-definitions>
