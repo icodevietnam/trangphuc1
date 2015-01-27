@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import com.icoding.trangphuc.dao.AccountDao;
 import com.icoding.trangphuc.domain.Account;
 import com.icoding.trangphuc.domain.Role;
+import com.icoding.trangphuc.utils.Encryption;
 
 @Service
 public class LoginService implements UserDetailsService {
@@ -74,7 +75,7 @@ public class LoginService implements UserDetailsService {
 	 */
 	private User buildUserForAuthentication(Account account,
 			List<GrantedAuthority> authorities) {
-		return new User(account.getUsername(), account.getPassword(),
-				authorities);
+		return new User(account.getUsername(), Encryption.md5(account
+				.getPassword()), authorities);
 	}
 }
