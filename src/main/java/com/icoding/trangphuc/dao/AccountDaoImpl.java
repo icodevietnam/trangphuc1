@@ -11,15 +11,14 @@ public class AccountDaoImpl<T extends Account> extends
 		AbstractFacadeDaoImpl<Account> implements AccountDao {
 
 	@Override
-	public Account authenticationByRole(String username, String password,
-			String roleName) {
+	public Account authenticationByRole(String username) {
 		Account acc = null;
 		try {
 			@SuppressWarnings("unchecked")
 			List<Account> listAccounts = getCurrentSession()
 					.createQuery(
-							"from Account where username = ? and password = ?")
-					.setParameter(0, username).setParameter(1, password).list();
+							"from Account where username = ?")
+					.setParameter(0, username).list();
 			if (listAccounts.size() > 0) {
 				acc = listAccounts.get(0);
 			}

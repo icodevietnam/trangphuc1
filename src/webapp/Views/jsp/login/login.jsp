@@ -4,8 +4,8 @@
 <script src="<c:url value="/js/admin.js" />"></script>
 <div class="loginPage"
 	style="width: 490px; height: 300px; margin: auto;">
-	<form action="loginAdmin" id="loginForm" class="form-horizontal"
-		role="form">
+	<form action="<c:url value="/j_spring_security_check"/>" id="loginForm"
+		class="form-horizontal" method="POST" role="form">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h3 class="panel-title">
@@ -56,6 +56,8 @@
 						class="icon glyphicon glyphicon-refresh" aria-hidden="false"></span>Reset
 				</button>
 			</div>
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
 		</div>
 	</form>
 </div>
