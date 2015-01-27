@@ -15,6 +15,10 @@
 	href="<c:url value="/css/bootstrap-theme.min.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/font-awesome.min.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/timeline.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/sb-admin-2.css" />" />
 <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
 <script src="<c:url value="/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="/js/editor.js" />"></script>
@@ -28,9 +32,7 @@
 			<tiles:insertAttribute name="navbar-right" />
 			<tiles:insertAttribute name="navbar-default" />
 		</nav>
-		<div id="page-wrapper" style="min-height: 650px;">
-			<tiles:insertAttribute name="content" />
-		</div>
+		<tiles:insertAttribute name="content" />
 	</div>
 </body>
 </html>
