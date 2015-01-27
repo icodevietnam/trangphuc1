@@ -38,6 +38,7 @@ public class LoginService implements UserDetailsService {
 		User user = null;
 		try {
 			Account account = accountDao.authenticationByRole(username);
+			System.out.println(account.getPassword());
 			List<GrantedAuthority> authorities = buildUserAuthority(account
 					.getListRoles());
 			user = buildUserForAuthentication(account, authorities);
@@ -78,4 +79,5 @@ public class LoginService implements UserDetailsService {
 		return new User(account.getUsername(), Encryption.md5(account
 				.getPassword()), authorities);
 	}
+
 }
