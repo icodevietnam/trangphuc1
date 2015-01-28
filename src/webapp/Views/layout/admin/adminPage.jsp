@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/bootstrap-theme.min.css" />" />
 <link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/metisMenu.min.css" />" />
+<link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/font-awesome.min.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/bootstrap-wysihtml5.css" />" />
@@ -24,8 +26,10 @@
 <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
 <script src="<c:url value="/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="/js/editor.js" />"></script>
+<script src="<c:url value="/js/metisMenu.min.js" />"></script>
 <script src="<c:url value="/js/jquery.validate.min.js" />"></script>
 <script src="<c:url value="/js/bootstrap-wysihtml5.js" />"></script>
+<script src="<c:url value="/js/sb-admin-2.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">
