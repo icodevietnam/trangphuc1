@@ -16,6 +16,8 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/font-awesome.min.css" />" />
 <link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/bootstrap-wysihtml5.css" />" />
+<link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/timeline.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/sb-admin-2.css" />" />
@@ -23,6 +25,7 @@
 <script src="<c:url value="/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="/js/editor.js" />"></script>
 <script src="<c:url value="/js/jquery.validate.min.js" />"></script>
+<script src="<c:url value="/js/bootstrap-wysihtml5.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">
