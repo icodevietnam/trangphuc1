@@ -3,7 +3,7 @@
 		<ul class="nav in" id="side-menu">
 			<li><a href="/trangphuc1/admin/index" class="active"><i
 					class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
-			<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
+			<li><a><i class="fa fa-bar-chart-o fa-fw"></i>
 					Category<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level collapse">
 					<li><a href="flot.html">Admin</a></li>

@@ -9,9 +9,29 @@
 		<put-attribute name="content" value="/Views/jsp/admin/index.jsp" />
 	</definition>
 	
-	<definition name="categoryIndex" extends="adminTemp">
+	<definition name="categoryAdmin" extends="adminTemp">
 		<put-attribute name="title" value="Administrator HomePage" />
-		<put-attribute name="content" value="/Views/jsp/admin/category.jsp" />
+		<put-attribute name="content" value="/Views/jsp/admin/categoryAdmin.jsp" />
+	</definition>
+	
+	<definition name="categoryAlbum" extends="adminTemp">
+		<put-attribute name="title" value="Administrator HomePage" />
+		<put-attribute name="content" value="/Views/jsp/admin/categoryAlbum.jsp" />
+	</definition>
+	
+	<definition name="categoryHome" extends="adminTemp">
+		<put-attribute name="title" value="Administrator HomePage" />
+		<put-attribute name="content" value="/Views/jsp/admin/categoryHome.jsp" />
+	</definition>
+	
+	<definition name="categoryNews" extends="adminTemp">
+		<put-attribute name="title" value="Administrator HomePage" />
+		<put-attribute name="content" value="/Views/jsp/admin/categoryNews.jsp" />
+	</definition>
+	
+	<definition name="categoryProduct" extends="adminTemp">
+		<put-attribute name="title" value="Administrator HomePage" />
+		<put-attribute name="content" value="/Views/jsp/admin/categoryProduct.jsp" />
 	</definition>
 	
 	<definition name="aboutUsIndex" extends="adminTemp">
