@@ -20,6 +20,8 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/bootstrap-wysihtml5.css" />" />
 <link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/dataTables.bootstrap.css" />" />
+<link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/timeline.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/sb-admin-2.css" />" />
@@ -29,17 +31,18 @@
 <script src="<c:url value="/js/metisMenu.min.js" />"></script>
 <script src="<c:url value="/js/jquery.validate.min.js" />"></script>
 <script src="<c:url value="/js/bootstrap-wysihtml5.js" />"></script>
+<script src="<c:url value="/js/dataTables.bootstrap.js" />"></script>
 <script src="<c:url value="/js/sb-admin-2.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">
 		<nav class="navbar navbar-default navbar-static-top" role="navigation"
-			style="margin-bottom: 0">
-			<tiles:insertAttribute name="navbar-header" />
-			<tiles:insertAttribute name="navbar-right" />
-			<tiles:insertAttribute name="navbar-default" />
-		</nav>
-		<tiles:insertAttribute name="content" />
+			style="margin-bottom: 0"> <tiles:insertAttribute
+			name="navbar-header" /> <tiles:insertAttribute name="navbar-right" />
+		<tiles:insertAttribute name="navbar-default" /> </nav>
+		<div id="page-wrapper" style="min-height: 650px;">
+			<tiles:insertAttribute name="content" />
+		</div>
 	</div>
 </body>
 </html>
