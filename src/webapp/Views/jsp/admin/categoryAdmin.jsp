@@ -1,1 +1,1 @@
-<h1>Category</h1>
+<h1>Admin</h1>

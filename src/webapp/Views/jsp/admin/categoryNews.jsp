@@ -1,1 +1,1 @@
-<h1>Category</h1>
+<h1>News</h1>

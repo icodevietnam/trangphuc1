@@ -16,13 +16,12 @@ import org.hibernate.annotations.Parameter;
 @Table(name = Category.TABLE)
 public class Category {
 	public static final String TABLE = "category";
-	private static final String PK = "id";
 	public static final long serialVersionUID = 0L;
 
-	@GenericGenerator(name = "generator", strategy = "foreign", parameters = @Parameter(name = "property", value = "article"))
+	@GenericGenerator(name = "articleGenerator", strategy = "foreign", parameters = @Parameter(name = "property", value = "article"))
 	@Id
-	@GeneratedValue(generator = "generator")
-	@Column(name = Category.PK)
+	@GeneratedValue(generator = "articleGenerator")
+	@Column(name = "category_id")
 	private long id;
 
 	@OneToOne(fetch = FetchType.LAZY)

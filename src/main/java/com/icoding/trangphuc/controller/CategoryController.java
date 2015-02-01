@@ -6,9 +6,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class CategoryController {
-	
-	@RequestMapping(value = "/admin/category",method = RequestMethod.GET)
-	public String adminCategory(){
-		return "categoryIndex";
+
+	@RequestMapping(value = "/admin/category/admin", method = RequestMethod.GET)
+	public String adminCategory() {
+		return "categoryAdmin";
 	}
+
+	@RequestMapping(value ="/admin/category/news", method = RequestMethod.GET)
+	public String newsCategory() {
+		return "categoryNews";
+	}
+
 }
