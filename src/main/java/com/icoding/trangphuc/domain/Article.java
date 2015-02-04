@@ -5,10 +5,11 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,12 +17,12 @@ import javax.persistence.Table;
 @Table(name = Article.TABLE)
 public class Article {
 	public static final String TABLE = "article";
-	private static final String PK = "id";
+	public static final String PK = "article_id";
 	public static final long serialVersionUID = 0L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = Article.PK)
+	@Column(name = PK)
 	private long id;
 
 	@Column(name = "title")
@@ -42,6 +43,9 @@ public class Article {
 	@Column(name = "meta_keyword")
 	private String metaKeyword;
 
+	@Column(name = "meta_description")
+	private String metaDescription;
+
 	@Column(name = "date_created")
 	private Date dateCreated;
 
@@ -51,7 +55,9 @@ public class Article {
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "article", cascade = CascadeType.ALL)
+	@JoinColumn(name = PK)
+	@OneToOne(cascade = CascadeType.ALL)
+	@MapsId
 	private Category category;
 
 	public long getId() {
