@@ -1,0 +1,32 @@
+/* Footer and show error */
+.admin-footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: #101010;
+	color: white;
+	padding: 5px;
+}
+
+.error {
+	color: red;
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.footer-text {
+	margin: auto;
+	text-align: center;
+}
+
+/* Page Header */
+.page-header{
+	font-family:helvetica,arial,sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+/* Init table */
+button{
+	border: 0;
+}

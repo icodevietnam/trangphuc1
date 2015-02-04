@@ -10,13 +10,13 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/reset.css" />" />
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/css/bootstrap.min.css" />" />
-<link rel="stylesheet" type="text/css"
-	href="<c:url value="/css/bootstrap-theme.min.css" />" />
-<link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/metisMenu.min.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/font-awesome.min.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/bootstrap-theme.min.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/bootstrap.min.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/bootstrap-wysihtml5.css" />" />
 <link rel="stylesheet" type="text/css"
@@ -25,14 +25,16 @@
 	href="<c:url value="/css/timeline.css" />" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/sb-admin-2.css" />" />
+<link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/admin/admin-page.css" />" />
 <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
 <script src="<c:url value="/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="/js/editor.js" />"></script>
 <script src="<c:url value="/js/metisMenu.min.js" />"></script>
 <script src="<c:url value="/js/jquery.validate.min.js" />"></script>
 <script src="<c:url value="/js/bootstrap-wysihtml5.js" />"></script>
+<script src="<c:url value="/js/jquery.dataTables.js" />"></script>
 <script src="<c:url value="/js/dataTables.bootstrap.js" />"></script>
-<script src="<c:url value="/js/sb-admin-2.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -43,6 +45,10 @@
 		<div id="page-wrapper" style="min-height: 650px;">
 			<tiles:insertAttribute name="content" />
 		</div>
+	</div>
+	<div class="admin-footer">
+		<div class="footer-text">Version 1.0.1 © 2014 by Icoding Active
+			Company Ltd. All rights reserved.</div>
 	</div>
 </body>
 </html>
