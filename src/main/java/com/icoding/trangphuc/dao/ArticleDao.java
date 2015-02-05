@@ -1,5 +1,7 @@
 package com.icoding.trangphuc.dao;
 
-public interface ArticleDao {
+import com.icoding.trangphuc.domain.Article;
 
+public interface ArticleDao extends AbstracFacadeDao<Article> {
+	
 }

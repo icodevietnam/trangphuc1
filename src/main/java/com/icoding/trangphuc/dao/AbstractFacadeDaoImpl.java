@@ -63,7 +63,7 @@ public abstract class AbstractFacadeDaoImpl<T> extends HibernateDaoSupport
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public boolean delete(long id) {
 		Boolean flag = false;
 		try {
 			T t = get(id);
@@ -80,7 +80,7 @@ public abstract class AbstractFacadeDaoImpl<T> extends HibernateDaoSupport
 	}
 
 	@Override
-	public T get(int id) {
+	public T get(long id) {
 		T o = (T) getHibernateTemplate().get(entityClass, id);
 		return o;
 	}

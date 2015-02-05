@@ -12,9 +12,9 @@ public interface AbstracFacadeDao<T> {
 
 	boolean update(T bean);
 
-	boolean delete(int id);
+	boolean delete(long id);
 	
-	T get(int id);
+	T get(long id);
 
 	List<T> getListByCriteria(DetachedCriteria detachedCriteria);
 
