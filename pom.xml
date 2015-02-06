@@ -77,7 +77,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
-			<exclusions>
+<!-- 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-core</artifactId>
@@ -86,7 +86,7 @@
 					<groupId>org.springframework</groupId>
 					<artifactId>spring-context</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 		<!-- Spring Framework Transaction -->
 		<dependency>

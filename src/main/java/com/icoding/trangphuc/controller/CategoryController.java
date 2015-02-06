@@ -12,7 +12,7 @@ public class CategoryController {
 		return "categoryAdmin";
 	}
 
-	@RequestMapping(value ="/admin/category/news", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/category/news", method = RequestMethod.GET)
 	public String newsCategory() {
 		return "categoryNews";
 	}
