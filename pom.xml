@@ -39,7 +39,7 @@
 		<!-- Version of jstl -->
 		<jstl.version>1.2</jstl.version>
 		<!-- Version of Spring -->
-		<spring.version>4.0.7.RELEASE</spring.version>
+		<spring.version>4.0.4.RELEASE</spring.version>
 		<!-- Version of Hibernate -->
 		<hibernate.version>4.2.9.Final</hibernate.version>
 		<!-- Version of Common Lang -->
@@ -80,7 +80,11 @@
 <!-- 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework</groupId>
-					<artifactId>spring-aop</artifactId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
 				</exclusion>
 			</exclusions> -->
 		</dependency>

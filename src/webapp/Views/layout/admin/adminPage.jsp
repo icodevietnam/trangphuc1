@@ -29,13 +29,13 @@
 	href="<c:url value="/css/admin/admin-page.css" />" />
 <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
 <script src="<c:url value="/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="/js/utils/utils.js" />"></script>
 <script src="<c:url value="/js/editor.js" />"></script>
 <script src="<c:url value="/js/metisMenu.min.js" />"></script>
 <script src="<c:url value="/js/jquery.validate.min.js" />"></script>
 <script src="<c:url value="/js/bootstrap-wysihtml5.js" />"></script>
 <script src="<c:url value="/js/jquery.dataTables.js" />"></script>
 <script src="<c:url value="/js/dataTables.bootstrap.js" />"></script>
+<script src="<c:url value="/js/utils/utils.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">

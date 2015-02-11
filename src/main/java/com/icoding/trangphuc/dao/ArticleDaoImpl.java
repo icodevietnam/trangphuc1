@@ -7,5 +7,5 @@ import com.icoding.trangphuc.domain.Article;
 @Repository
 public class ArticleDaoImpl<T extends Article> extends
 		AbstractFacadeDaoImpl<Article> implements ArticleDao {
-	
+
 }

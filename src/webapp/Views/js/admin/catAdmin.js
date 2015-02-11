@@ -1,7 +1,8 @@
-$(function() {
-	$('#btnCreate').click(function(event){
-		event.preventDefault();
-		createModal();
+$(function(){
+	$('body').showModal(
+	{
+		title:'test header',
+		body :'test body',
+		footer:'test default'
 	});
 });
-
