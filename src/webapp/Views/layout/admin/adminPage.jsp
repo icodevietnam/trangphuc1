@@ -35,6 +35,7 @@
 <script src="<c:url value="/js/bootstrap-wysihtml5.js" />"></script>
 <script src="<c:url value="/js/jquery.dataTables.js" />"></script>
 <script src="<c:url value="/js/dataTables.bootstrap.js" />"></script>
+<script src="<c:url value="/js/utils/utils.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">
