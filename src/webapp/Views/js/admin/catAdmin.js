@@ -1,3 +1,7 @@
 $(function() {
-	$("#crudAdmin").dataTable();
+	$('#btnCreate').click(function(event){
+		event.preventDefault();
+		createModal();
+	});
 });
+

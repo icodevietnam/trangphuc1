@@ -9,9 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -30,9 +30,8 @@ public class Category {
 	@Column(name = PK)
 	private long id;
 
-	@JoinColumn(name = PK)
-	@OneToOne
-	@MapsId
+	@OneToOne(fetch = FetchType.LAZY)
+	@PrimaryKeyJoinColumn
 	private Article article;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
@@ -42,7 +41,19 @@ public class Category {
 	@JoinColumn(name = "parent")
 	private Category parent;
 
+	@Column(name = "category_status")
 	private String categoryStatus;
+
+	@Column(name = "orders")
+	private long orders;
+
+	public long getOrder() {
+		return orders;
+	}
+
+	public void setOrder(long orders) {
+		this.orders = orders;
+	}
 
 	public List<Category> getListCategories() {
 		return listCategories;
