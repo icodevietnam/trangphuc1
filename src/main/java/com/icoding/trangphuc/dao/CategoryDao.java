@@ -6,5 +6,5 @@ import com.icoding.trangphuc.domain.Category;
 
 @Repository
 public interface CategoryDao extends AbstracFacadeDao<Category> {
-
+	
 }
