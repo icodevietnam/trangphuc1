@@ -1,8 +1,8 @@
 $(function(){
 	$('body').showModal(
 	{
-		title:'test header',
-		body :'test body',
-		footer:'test default',
+		title:'Tú đẹp trai',
+		body :'Tất nhiên rồi.',
+		footer:'default',
 	});
 });
