@@ -3,6 +3,6 @@ $(function(){
 	{
 		title:'test header',
 		body :'test body',
-		footer:'test default'
+		footer:'test default',
 	});
 });

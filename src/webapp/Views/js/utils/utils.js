@@ -10,7 +10,6 @@
 			switch (settings.display) {
 			case 'true':
 				$(this).append(initModal());
-				$("#crudModal").modal('show');
 				break;
 			default:
 				attributeError('Only 1 values: true');
@@ -21,13 +20,24 @@
 			case 'default':
 				break;
 			default:
-				$(this).find('.modal-footer').html(settings.footer);
+				footer.html(settings.footer);
 				break;
 			}
-
+			
+			switch(settings.buttonCreate){
+			case 'none':
+				$('#btnCreate').click(function() {
+					$("#crudModal").modal('show');
+				});
+				break;
+				$('#'+settings.buttonCreate).click(function() {
+					$("#crudModal").modal('show');
+				});
+			default:
+			}
 			// Set title and body :)
-			$(this).find('.modal-title').html(settings.header);
-			$(this).find('.modal-body').html(settings.body);
+			title.html(settings.header);
+			body.html(settings.body);
 		});
 	};
 
@@ -38,7 +48,8 @@
 		footer : 'default',
 		saveAction : 'none',
 		updateAction: 'none',
-		loadObject : 'none'
+		loadObject : 'none',
+		buttonCreate:'none'
 	};
 
 }(jQuery));

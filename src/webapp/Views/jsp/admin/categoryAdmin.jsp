@@ -9,7 +9,7 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div id ="crudAction">
-			<button class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Create</button>
+			<button id='btnCreate' class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Create</button>
 			<button class="btn btn-sm  btn-success"><i class="fa fa-hand-o-right"></i> Copy</button>
 			<button class="btn btn-sm  btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
 			<button class="btn btn-sm  btn-default"><i class="fa fa-refresh"></i> Refresh</button>
