@@ -1,16 +1,15 @@
 (function($) {
 	// Plugin create modal. Don't need to remember very much.
-	$.fn.showModal = function(options) {
+	$.fn.popup = function(options) {
 		
 		var defaults = {
-				title : 'Modal Header',
+				title : 'Insert Item',
 				body : 'Modal Body',
 				footer : 'default',
 				saveAction : 'none',
 				updateAction: 'none',
 				loadObject : 'none',
 				buttonCreate:'none',
-				loadPage:'none'
 		};
 		
 		var settings = $.extend({},defaults, options);
@@ -39,17 +38,31 @@
 					$("#crudModal").modal('show');
 				});
 			default:
+				break;
+			}
+			
+			var urlPage = settings.body;
+			if(urlPage == 'none'){
+				body.html("");
+				body.append("No Url Page is loaded");
+			}
+			else{
+				body.load(urlForm + settings.body);
 			}
 			// Set title and body :)
 			title.html(settings.title);
-			body.html(settings.body);
 		});
 	};
 
 }(jQuery));
 
+urlForm = '/trangphuc1/Views/jsp/form/';
+webName ='/trangphuc1';
+var minLength = 6;
+
 function initModal() {
 	var modalBox = "<div id='crudModal' class='modal fade' id='crudInsert' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>"
+			+ "<form id='crudInsert' >"
 			+ "<div class='modal-dialog'>"
 			+ "<div class='modal-content'>"
 			+ "<div class='modal-header'>"
@@ -61,11 +74,19 @@ function initModal() {
 			+ "</div>"
 			+ "<div class='modal-footer'>"
 			+ "<button type='button' class='btn btn-sm btn-default' data-dismiss='modal'>Close</button>"
-			+ "<button type='button' class='btn btn-sm btn-primary'>Save</button>"
-			+ "</div>" + "</div>";
+			+ "<button id='btnSave' type='button' class='btn btn-sm btn-primary'>Save</button>"
+			+ "</div></form>" + "</div>";
 	return modalBox;
 }
 
 function attributeError(msg) {
 	console.log("Attribute Error:" + msg);
+}
+
+function requireMessage(fieldName){
+	return fieldName.substring(3,fieldName.length) + " is not blank";
+}
+
+function minlengthMsg(fieldName){
+	return fieldName.substring(3,fieldName.length) + " is smaller than " + minLength +" characters.";
 }

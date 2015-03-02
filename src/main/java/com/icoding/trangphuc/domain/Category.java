@@ -7,9 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -31,19 +29,28 @@ public class Category {
 	@Column(name = PK)
 	private long id;
 
-	@JoinColumn(name = PK)
 	@OneToOne
-	@MapsId
+	@PrimaryKeyJoinColumn
 	private Article article;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
 	private List<Category> listCategories;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@PrimaryKeyJoinColumn
 	private Category parent;
 
+	@Column(name = "category_status")
 	private String categoryStatus;
+
+	private Long orders;
+
+	public Long getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Long orders) {
+		this.orders = orders;
+	}
 
 	public List<Category> getListCategories() {
 		return listCategories;

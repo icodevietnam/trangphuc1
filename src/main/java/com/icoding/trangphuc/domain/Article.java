@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +39,14 @@ public class Article {
 	@Column(name = "real_url")
 	private String realUrl;
 
+	public String getMetaDescription() {
+		return metaDescription;
+	}
+
+	public void setMetaDescription(String metaDescription) {
+		this.metaDescription = metaDescription;
+	}
+
 	@Column(name = "meta_keyword")
 	private String metaKeyword;
 
@@ -50,6 +61,10 @@ public class Article {
 
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "author", nullable = true)
+	private Account author;
 
 	public long getId() {
 		return id;
@@ -129,6 +144,14 @@ public class Article {
 
 	public void setEnabled(boolean isEnabled) {
 		this.isEnabled = isEnabled;
+	}
+
+	public Account getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Account author) {
+		this.author = author;
 	}
 
 }

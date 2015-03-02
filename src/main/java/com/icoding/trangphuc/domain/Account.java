@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -66,6 +67,9 @@ public class Account {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "accounts_roles", joinColumns = { @JoinColumn(name = "account_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
 	private Collection<Role> listRoles;
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
+	private Collection<Article> listArticles;
 
 	public Collection<Role> getListRoles() {
 		return listRoles;
@@ -177,6 +181,14 @@ public class Account {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public Collection<Article> getListArticles() {
+		return listArticles;
+	}
+
+	public void setListArticles(Collection<Article> listArticles) {
+		this.listArticles = listArticles;
 	}
 
 }
