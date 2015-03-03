@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -37,12 +38,22 @@ public class Category {
 	private List<Category> listCategories;
 
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "parent", nullable = true)
 	private Category parent;
 
 	@Column(name = "category_status")
 	private String categoryStatus;
 
+	@Column(name = "orders")
 	private Long orders;
+
+	public String getCategoryStatus() {
+		return categoryStatus;
+	}
+
+	public void setCategoryStatus(String categoryStatus) {
+		this.categoryStatus = categoryStatus;
+	}
 
 	public Long getOrders() {
 		return orders;
@@ -70,14 +81,6 @@ public class Category {
 
 	public long getId() {
 		return id;
-	}
-
-	public String getCategoryStatus() {
-		return categoryStatus;
-	}
-
-	public void setCategoryStatus(String categoryStatus) {
-		this.categoryStatus = categoryStatus;
 	}
 
 	public void setId(long id) {

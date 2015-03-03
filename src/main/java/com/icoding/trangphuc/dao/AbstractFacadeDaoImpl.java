@@ -152,4 +152,8 @@ public abstract class AbstractFacadeDaoImpl<T> extends HibernateDaoSupport
 		return sessionFactory.getCurrentSession();
 	}
 
+	public Session getOpenSession() {
+		return sessionFactory.openSession();
+	}
+
 }

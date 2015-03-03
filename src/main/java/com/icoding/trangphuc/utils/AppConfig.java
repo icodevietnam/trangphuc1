@@ -1,5 +1,7 @@
 package com.icoding.trangphuc.utils;
 
+import com.icoding.trangphuc.constant.CategoryStatus;
+
 public class AppConfig {
 
 	/* Define URL for Admin Page */
@@ -7,4 +9,7 @@ public class AppConfig {
 
 	/* Name of website */
 	public static final String WEBSITE_NAME = "/trangphuc1";
+	
+	/* Admin Category Status */
+	public static final String CATEGORY_STATUS = CategoryStatus.ADMIN.toString();
 }

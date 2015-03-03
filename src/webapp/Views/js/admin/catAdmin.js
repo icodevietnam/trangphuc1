@@ -20,6 +20,9 @@ $(function() {
 			txtMetaDescription : {
 				required : true,
 				minlength : 6
+			},
+			txtOrders : {
+				required : true,
 			}
 		},
 		messages : {
@@ -38,6 +41,9 @@ $(function() {
 			txtMetaDescription : {
 				required : requireMessage('txtMetaDescription'),
 				minlength : minlengthMsg('txtMetaDescription')
+			},
+			txtOrders : {
+				required : requireMessage('txtOrders'),
 			}
 		}
 	});
@@ -46,6 +52,9 @@ $(function() {
 		e.preventDefault();
 		var title = $('#txtTitle').val();
 		var description = $('#txtDescription').val();
+		var metaKeyword = $('#txtMetaKeyword').val();
+		var metaDescription = $('#txtMetaDescription').val();
+		var orders = $('#txtOrders').val();
 		if (crudForm.valid()) {
 			$.ajax({
 				type : 'POST',
@@ -54,7 +63,10 @@ $(function() {
 				data : {
 					txtTitle : title,
 					txtDescription : description,
-					categoryStatus : 'Admin',
+					txtMetaKeyword : metaKeyword,
+					txtMetaDescription : metaDescription,
+					txtOrders : orders,
+					categoryStatus : 'Admin'
 				},
 				success : function(data) {
 					// reload Table
@@ -66,6 +78,34 @@ $(function() {
 				}
 			});
 		}
+	});
+	
+	$.ajax({
+		type : 'GET',
+		dataType : 'JSON',
+		url : webName + '/admin/showCategory',
+	});
+
+	$('#crudTable').dataTable({
+		"bDestroy" : true,
+		"bSort" : true,
+		"bFilter" : false,
+		"bLengthChange" : false,
+		"bPaginate" : true,
+		"sDom" : '<"top">rt<"bottom"flp><"clear">',
+		"aaData" : dataCategoryAdmin,
+		"aaSorting" : [],
+		"aoColumns" : [ {
+			"sTitle" : "Patient"
+		}, {
+			"sTitle" : "DOB"
+		}, {
+			"sTitle" : "Age"
+		}, {
+			"sTitle" : "Insurance"
+		}, {
+			"sTitle" : "Referral"
+		} ]
 	});
 
 });

@@ -14,8 +14,8 @@
 			<button class="btn btn-sm  btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
 			<button class="btn btn-sm  btn-default"><i class="fa fa-refresh"></i> Refresh</button>
 		</div>
-		<div id="crudTable">
-			<table class="table table-striped table-bordered table-hover" id="crudAdmin">
+		<div>
+			<table class="table table-striped table-bordered table-hover" id="crudTable">
 			</table>
 		</div>
 	</div>

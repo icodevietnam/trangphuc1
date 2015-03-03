@@ -18,7 +18,7 @@
 		name="txtMetaDescription" placeholder="Meta Description">
 </div>
 <div class="form-group">
-	<label for="inputMetaDescription">Orders</label> <input type="text"
+	<label for="inputOrders">Orders</label> <input type="text"
 		class="form-control" id="txtOrders" name="txtOrders">
 </div>
 <script>
