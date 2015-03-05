@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -14,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.icoding.trangphuc.dao.AccountDao;
 import com.icoding.trangphuc.domain.Account;
@@ -32,13 +34,14 @@ public class LoginService implements UserDetailsService {
 	 * @see org.springframework.security.core.userdetails.UserDetailsService#
 	 * loadUserByUsername(java.lang.String)
 	 */
+
+	@Transactional
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		User user = null;
 		try {
 			Account account = accountDao.authenticationByRole(username);
-			System.out.println(account.getPassword());
 			List<GrantedAuthority> authorities = buildUserAuthority(account
 					.getListRoles());
 			user = buildUserForAuthentication(account, authorities);

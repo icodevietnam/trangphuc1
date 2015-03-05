@@ -18,6 +18,9 @@ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		<csrf />
 	</http>
 
+	<beans:bean id="icodingAuthenticationSuccessHandler"
+		class="com.icoding.trangphuc.security.IcodingAuthenticationSuccessHandler" />
+		
 	<authentication-manager>
 		<authentication-provider user-service-ref="loginService">
 			<password-encoder ref="md5PasswordEncoder" />

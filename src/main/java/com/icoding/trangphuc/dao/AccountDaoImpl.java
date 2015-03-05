@@ -17,7 +17,7 @@ public class AccountDaoImpl<T extends Account> extends
 			@SuppressWarnings("unchecked")
 			List<Account> listAccounts = getCurrentSession()
 					.createQuery(
-							"from Account where username = ?")
+							" from Account where username = ? ")
 					.setParameter(0, username).list();
 			if (listAccounts.size() > 0) {
 				acc = listAccounts.get(0);
