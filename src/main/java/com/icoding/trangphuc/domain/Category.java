@@ -17,6 +17,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = Category.TABLE)
 public class Category {
@@ -34,6 +36,7 @@ public class Category {
 	@PrimaryKeyJoinColumn
 	private Article article;
 
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
 	private List<Category> listCategories;
 
@@ -44,8 +47,8 @@ public class Category {
 	@Column(name = "category_status")
 	private String categoryStatus;
 
-	@Column(name = "orders")
-	private Long orders;
+	@Column(name = "position")
+	private Long position;
 
 	public String getCategoryStatus() {
 		return categoryStatus;
@@ -55,12 +58,12 @@ public class Category {
 		this.categoryStatus = categoryStatus;
 	}
 
-	public Long getOrders() {
-		return orders;
+	public Long getPosition() {
+		return position;
 	}
 
-	public void setOrders(Long orders) {
-		this.orders = orders;
+	public void setPosition(Long position) {
+		this.position = position;
 	}
 
 	public List<Category> getListCategories() {

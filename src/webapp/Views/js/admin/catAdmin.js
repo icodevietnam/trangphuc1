@@ -54,7 +54,9 @@ $(function() {
 		var description = $('#txtDescription').val();
 		var metaKeyword = $('#txtMetaKeyword').val();
 		var metaDescription = $('#txtMetaDescription').val();
-		var orders = $('#txtOrders').val();
+		var position = $('#txtPosition').val();
+		var parent = $('#cbxParent').val();
+		console.log(parent);
 		if (crudForm.valid()) {
 			$.ajax({
 				type : 'POST',
@@ -65,7 +67,8 @@ $(function() {
 					txtDescription : description,
 					txtMetaKeyword : metaKeyword,
 					txtMetaDescription : metaDescription,
-					txtOrders : orders,
+					txtPosition : position,
+					cbxParent : parent,
 					categoryStatus : 'Admin'
 				},
 				success : function(data) {
@@ -80,7 +83,7 @@ $(function() {
 		}
 	});
 	
-	$.ajax({
+/*	$.ajax({
 		type : 'GET',
 		dataType : 'JSON',
 		url : webName + '/admin/showCategory',
@@ -106,6 +109,22 @@ $(function() {
 		}, {
 			"sTitle" : "Referral"
 		} ]
+	});*/
+	
+	$.ajax({
+		type:'GET',
+		dataType:'JSON',
+		url : webName + '/admin/showCategoryParent',
+		data : {
+			categoryStatus : 'admin'
+		},
+		success:function(data){
+			console.log(data);
+		},
+		error : function(xhr, ajaxOptions, thrownError) {
+			console.log(xhr.status);
+			console.log(thrownError);
+		}
 	});
 
 });

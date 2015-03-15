@@ -28,6 +28,8 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/touchspin.min.css" />" />
 <link rel="stylesheet" type="text/css"
+	href="<c:url value="/css/bootstrap-select.min.css" />" />
+<link rel="stylesheet" type="text/css"
 	href="<c:url value="/css/admin/admin-page.css" />" />
 <script src="<c:url value="/js/jquery-1.11.1.js" />"></script>
 <script src="<c:url value="/js/bootstrap.min.js" />"></script>
@@ -38,6 +40,7 @@
 <script src="<c:url value="/js/jquery.dataTables.js" />"></script>
 <script src="<c:url value="/js/touchspin.min.js" />"></script>
 <script src="<c:url value="/js/dataTables.bootstrap.js" />"></script>
+<script src="<c:url value="/js/bootstrap-select.min.js" />"></script>
 <script src="<c:url value="/js/utils/utils.js" />"></script>
 </head>
 <body>

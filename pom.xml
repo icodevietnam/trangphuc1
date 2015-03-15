@@ -64,6 +64,8 @@
 		<slf4j.version>1.7.7</slf4j.version>
 		<!-- JSTL version -->
 		<jstl.version>1.2</jstl.version>
+		<!-- DBCP version -->
+		<dbcp.version>1.4</dbcp.version>
 	</properties>
 	<dependencies>
 		<!-- JSTL for JSP -->
@@ -77,16 +79,9 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
-<!-- 			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-core</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-context</artifactId>
-				</exclusion>
-			</exclusions> -->
+			<!-- <exclusions> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-core</artifactId> 
+				</exclusion> <exclusion> <groupId>org.springframework</groupId> <artifactId>spring-context</artifactId> 
+				</exclusion> </exclusions> -->
 		</dependency>
 		<!-- Spring Framework Transaction -->
 		<dependency>
@@ -220,6 +215,12 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
+		</dependency>
+		<!-- Commons DBCP -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${dbcp.version}</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -13,9 +13,6 @@ http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<mvc:annotation-driven />
-
-	<!-- <context:property-placeholder location="/WEB-INF/classes/jdbc.properties" 
-		/> -->
 	<context:property-placeholder location="classpath:jdbc.properties" />
 
 	<bean id="dataSource"

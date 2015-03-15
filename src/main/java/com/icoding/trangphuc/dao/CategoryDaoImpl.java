@@ -14,7 +14,10 @@ public class CategoryDaoImpl<T extends Category> extends
 	public ArrayList<Category> getListCategoryByStatus(String categoryStatus) {
 		ArrayList<Category> listCategories = new ArrayList<Category>();
 		try {
-			listCategories = (ArrayList<Category>) getCurrentSession().createQuery(" SELECT * FROM CATEGORY WHERE category_status = ? ORDERS BY 'orders' DESC ").list();
+			listCategories = (ArrayList<Category>) getCurrentSession()
+					.createQuery(
+							" SELECT * FROM CATEGORY WHERE category_status = ? ORDERS BY 'orders' DESC ")
+					.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -25,7 +28,10 @@ public class CategoryDaoImpl<T extends Category> extends
 	public ArrayList<Category> getParentCategoryByStatus(String categoryStatus) {
 		ArrayList<Category> listCategories = new ArrayList<Category>();
 		try {
-			listCategories = (ArrayList<Category>) getCurrentSession().createQuery(" SELECT * FROM CATEGORY WHERE category_status = ? ORDERS BY 'orders' DESC ").list();
+			listCategories = (ArrayList<Category>) getCurrentSession()
+					.createQuery(
+							" SELECT * FROM CATEGORY WHERE category_status = ? AND parent is null ORDERS BY 'orders' DESC ")
+					.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

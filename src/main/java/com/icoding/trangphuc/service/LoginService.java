@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -23,6 +22,7 @@ import com.icoding.trangphuc.domain.Role;
 import com.icoding.trangphuc.utils.Encryption;
 
 @Service
+@Transactional(value = "txManager")
 public class LoginService implements UserDetailsService {
 
 	@Autowired
@@ -35,7 +35,6 @@ public class LoginService implements UserDetailsService {
 	 * loadUserByUsername(java.lang.String)
 	 */
 
-	@Transactional
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {

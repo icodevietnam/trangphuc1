@@ -2,7 +2,7 @@ package com.icoding.trangphuc.utils;
 
 import com.icoding.trangphuc.constant.CategoryStatus;
 
-public class AppConfig {
+public class AppVariable {
 
 	/* Define URL for Admin Page */
 	public static final String ADMIN_PAGE = "admin";

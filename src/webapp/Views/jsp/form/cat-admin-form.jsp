@@ -18,11 +18,20 @@
 		name="txtMetaDescription" placeholder="Meta Description">
 </div>
 <div class="form-group">
-	<label for="inputOrders">Orders</label> <input type="text"
-		class="form-control" id="txtOrders" name="txtOrders">
+	<label for="inputParent">Category Parent</label>
+	<select name="cbxParent" class="form-control select-parent"
+		id="cbxParent">
+	</select>
+
+</div>
+<div class="form-group">
+	<label for="inputPosition">Orders</label> <input type="text"
+		class="form-control" id="txtPosition" name="txtPosition">
 </div>
 <script>
 	$('#txtOrders').TouchSpin({
 		initval : 0
 	});
+
+	$('.select-parent').selectpicker();
 </script>

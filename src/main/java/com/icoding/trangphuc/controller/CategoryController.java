@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,11 +22,6 @@ import com.icoding.trangphuc.utils.UrlUtils;
 
 @Controller
 public class CategoryController {
-
-	@ModelAttribute
-	public void setVaryResponseHeader(HttpServletResponse response) {
-		response.setHeader("Vary", "Accept");
-	}
 
 	@Autowired
 	private CategoryService categoryService;
@@ -48,7 +41,8 @@ public class CategoryController {
 			@RequestParam(value = "txtTitle", required = false) String title,
 			@RequestParam(value = "txtDescription", required = false) String description,
 			@RequestParam(value = "categoryStatus", required = false) String categoryStatus,
-			@RequestParam(value = "txtOrders", required = false) String orders,
+			@RequestParam(value = "txtPosition", required = false) String position,
+			@RequestParam(value = "cbxParent", required = false) String id,
 			@RequestParam(value = "txtMetaKeyword", required = false) String metaKeyword,
 			@RequestParam(value = "txtMetaDescription", required = false) String metaDescription,
 			HttpServletRequest request) {
@@ -70,7 +64,7 @@ public class CategoryController {
 		Category category = new Category();
 		category.setArticle(article);
 		category.setCategoryStatus(categoryStatus);
-		category.setOrders(Long.parseLong(orders));
+		category.setPosition(Long.parseLong(position));
 		try {
 			categoryService.save(category);
 		} catch (Exception e) {
@@ -82,7 +76,15 @@ public class CategoryController {
 	}
 
 	@RequestMapping(value = "admin/showCategory", method = RequestMethod.GET)
-	public @ResponseBody ArrayList<Category> listCategoryAdmin(
+	public @ResponseBody ArrayList<Category> listCategory(
+			@RequestParam(value = "categoryStatus") String categoryStatus) {
+		ArrayList<Category> listCategories = categoryService
+				.getListCategoryByStatus(categoryStatus);
+		return listCategories;
+	}
+
+	@RequestMapping(value = "admin/showCategoryParent", method = RequestMethod.GET)
+	public @ResponseBody ArrayList<Category> listCategoryParent(
 			@RequestParam(value = "categoryStatus") String categoryStatus) {
 		ArrayList<Category> listCategories = categoryService
 				.getParentCategoryByStatus(categoryStatus);
