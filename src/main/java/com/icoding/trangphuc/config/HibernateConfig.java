@@ -3,15 +3,19 @@ package com.icoding.trangphuc.config;
 import java.util.Properties;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @PropertySource("classpath:jdbc.properties")
 @Configuration
+@EnableTransactionManagement
 public class HibernateConfig {
 
 	private @Value("${database.driver}") String driver;
@@ -23,7 +27,8 @@ public class HibernateConfig {
 	private @Value("${database.hbm2ddl.auto}") String hbm2dll;
 	private @Value("${database.flushmode}") String flushMode;
 
-	@Bean
+	@Autowired
+	@Bean(name = "sessionFactory")
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
@@ -35,9 +40,10 @@ public class HibernateConfig {
 
 	public Properties getHibernateProperties() {
 		Properties prop = new Properties();
-		prop.put("database.flushmode", flushMode);
-		prop.put("database.show_sql", showSql);
-		prop.put("database.dialect", dialect);
+		prop.put("hibernate.flushmode", flushMode);
+		prop.put("hibernate.show_sql", showSql);
+		prop.put("hibernate.dialect", dialect);
+		prop.put("hibernate.flushmode", flushMode);
 		return prop;
 	}
 
@@ -55,5 +61,10 @@ public class HibernateConfig {
 	@Bean
 	public HibernateTransactionManager txManager() {
 		return new HibernateTransactionManager(sessionFactory().getObject());
+	}
+
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
+		return new PropertySourcesPlaceholderConfigurer();
 	}
 }

@@ -7,14 +7,14 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	<context-param>
+	<!-- <context-param>
 		<param-name>contextApplication</param-name>
 		<param-value>com.icoding.trangphuc.config.AppConfig</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<servlet>
+	</listener> -->
+	<!-- <servlet>
 		<servlet-name>composer</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
@@ -30,7 +30,7 @@
 	<servlet-mapping>
 		<servlet-name>composer</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 	<!-- Input UTF-8 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
